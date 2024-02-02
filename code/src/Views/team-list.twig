@@ -1,0 +1,20 @@
+<div class="back">
+    <h1>English Premier League Teams</h1>
+    <div class="container center">
+        {% for team in teams %}
+            <div class="team-block">
+                <h2 class="team-name">{{ team["name"] }}</h2>
+                <img src="{{ team["crest"] }}" alt="team logo">
+                <p class="team-manager">Manager: {{ team["coach"]["name"] }}</p>
+                <div class="team-list">
+                    <p>Team List</p>
+                    <ul class="list">
+                        {% for player in team["squad"] %}
+                            <li>{{ player["name"] }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

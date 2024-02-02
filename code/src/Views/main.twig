@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <link rel="stylesheet" href="../../styles/style.css" />
+        {% endblock %}
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="menu">
+                <div class="menu-item">
+                    <a class="menu-link" href="/">Home</a>
+                </div>
+                <div class="menu-item">
+                    <a class="menu-link" href="/user">Users</a>
+                </div>
+                <div class="menu-item">
+                    <a class="menu-link" href="/info">Info</a>
+                </div>
+                <div class="menu-item">
+                    <a class="menu-link" href="/teams">EPL Teams</a>
+                </div>
+                <div class="menu-item">
+                    <a class="menu-link" href="/weather">Weather</a>
+                </div>
+            </div>
+            <div class="time">Текущее время {{ "now"|date("H:i:s", "Europe/Moscow") }}</div>
+        </header>
+        {% include content_template_name %}
+        <footer></footer>
+    </body>
+</html>
